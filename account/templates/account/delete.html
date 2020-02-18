@@ -1,0 +1,9 @@
+{% extends 'account/base.html' %}
+{% block content%}
+<form method="post">{% csrf_token %}
+    <h3>Delete Profile?</h3>" {{ object.fname }}{{ object.lname }}{{ object.studno }}"
+    <button type='submit'> YES </button>
+    <a href="{% url 'profile_query' %}">No</a>
+</form>
+
+{% endblock content %}

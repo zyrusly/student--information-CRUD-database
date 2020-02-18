@@ -1,0 +1,16 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<form method="GET">
+    <input type="text" name='search_name'>
+</form>
+<ul>
+{% for list in profile_list %}
+
+    <li>
+        <a href="{% url 'profile_update' list.id %}">{{ list.fname }} {{ list.mname }} {{ list.lname }}{{ list.section }}{{ list.studno}}</a>
+        <a href="{% url 'profile_delete' list.id %}">Delete</a>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Student Information</title>
+
+</head>
+
+<body>
+    <nav>
+        {{ user.username }} 
+        <a href="{% url 'logout' %}">Logout </a>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>
