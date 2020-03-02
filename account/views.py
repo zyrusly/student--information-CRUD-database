@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.views.generic import CreateView,DeleteView,UpdateView,DetailView
 from .models import Profile
+from django.contrib.auth.decorators import login_required
 
 
 class ProfileDetailView(LoginRequiredMixin,DetailView):
@@ -33,7 +34,7 @@ class ProfileDeleteView(LoginRequiredMixin,DeleteView):
 
 
 
-
+@login_required
 def profile_queryset(request):
     profile_list = ''
     if request.GET:
